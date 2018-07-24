@@ -8,10 +8,11 @@ import biblioteca.entidade.Livro;
 public class LivroMI implements LivroDAO {
 
 	private static ArrayList<Livro> list = new ArrayList<>();
-	
+
 	static public ArrayList<Livro> getConnection() {
 		return list;
 	}
+
 	@Override
 	public void salvaLivro(Livro livro) {
 		list.add(livro);
@@ -26,6 +27,14 @@ public class LivroMI implements LivroDAO {
 			}
 		}
 		return null;
+	}
+
+	public static ArrayList<Livro> getList() {
+		return list;
+	}
+
+	public static void setList(ArrayList<Livro> list) {
+		LivroMI.list = list;
 	}
 
 }

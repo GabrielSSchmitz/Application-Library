@@ -6,7 +6,7 @@ import biblioteca.dao.PeriodicoDAO;
 import biblioteca.entidade.Periodico;
 
 public class PeriodicoMI implements PeriodicoDAO {
-	
+
 	private static ArrayList<Periodico> list = new ArrayList<>();
 
 //	----------------------------
@@ -30,6 +30,14 @@ public class PeriodicoMI implements PeriodicoDAO {
 			}
 		}
 		return null;
+	}
+
+	public static ArrayList<Periodico> getList() {
+		return list;
+	}
+
+	public static void setList(ArrayList<Periodico> list) {
+		PeriodicoMI.list = list;
 	}
 
 }

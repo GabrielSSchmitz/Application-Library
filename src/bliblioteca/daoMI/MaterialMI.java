@@ -29,4 +29,12 @@ public class MaterialMI implements MaterialDAO {
 		return null;
 	}
 
+	public static ArrayList<Material> getList() {
+		return list;
+	}
+
+	public static void setList(ArrayList<Material> list) {
+		MaterialMI.list = list;
+	}
+
 }

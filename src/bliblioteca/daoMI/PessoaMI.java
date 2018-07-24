@@ -31,7 +31,7 @@ public class PessoaMI implements PessoaDAO {
 		return null;
 	}
 
-	public static boolean procura_CPF(String cpf) {
+	public static boolean cpfIsCadastrado(String cpf) {
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getCpf().equals(cpf)) {
 				return true;
