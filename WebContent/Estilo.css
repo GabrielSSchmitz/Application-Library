@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+nav {
+    float: left;
+    width: 200px;
+    padding: 20px;
+}
+
+article {
+    float: left;
+    padding: 20px;
+    width: 600px;
+}
