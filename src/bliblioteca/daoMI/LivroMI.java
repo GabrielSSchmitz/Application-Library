@@ -13,6 +13,22 @@ public class LivroMI implements LivroDAO {
 		return list;
 	}
 
+	static public void emprestimo(int codigo) {
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getCodigo() == codigo) {
+				list.get(i).setQuantidade(list.get(i).getQuantidade() - 1);
+			}
+		}
+	}
+	
+	static public void devolucao(int codigo) {
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getCodigo() == codigo) {
+				list.get(i).setQuantidade(list.get(i).getQuantidade() + 1);
+			}
+		}
+	}
+
 	@Override
 	public void salvaLivro(Livro livro) {
 		list.add(livro);

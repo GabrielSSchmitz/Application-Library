@@ -3,7 +3,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="Estilo.css">
+
+<link rel="stylesheet" type="text/css" href="estilo.css">
+<script type="text/javascript" src="JavaScript.js"></script>
+
 <title>Biblioteca Tech</title>
 </head>
 <body>
@@ -12,21 +15,25 @@
 		<h1>Biblioteca Tech</h1>
 	</header>
 
+	<hr>
+
 	<nav>
-		<ul>
-			<li><a href="index.jsp">Index</a></li>
-			<li><a href="cadastro.jsp">Cadastro</a></li>
-			<li><a href="lista.jsp">Lista</a></li>
-			<li><a href="emprestimo.jsp">Emprestimo</a></li>
-
-			<ul>
-				<li><a href="cancelamento.jsp"> Cancelamento</a></li>
-				<li><a href="devolucao.jsp"> Devolução</a></li>
-			</ul>
-
-		</ul>
+			<a href="index.jsp"><button>Index</button></a>
+			<a href="lista.jsp"><button>Lista</button></a>
+			<a href="cadastro.jsp"><button>Cadastro</button></a>
+			<div class="dropdown">
+			
+				<a href="emprestimo.jsp"><button class="dropdown">Emprestimo</button></a>
+				
+				<div class="dropdown-content">
+				
+					<a href="cancelamento.jsp"><button>Cancelamento</button></a> 
+					<a href="devolucao.jsp"><button>Devolução</button></a>
+					
+				</div>
+			</div>
 	</nav>
-
+	
 	<article>
 
 		<h1>Emprestimo</h1>
@@ -79,44 +86,47 @@
 
 				<tr id="listaLivro" style="display: none">
 					<td>Livro:</td>
-					<td>
-						<select id="livro" name="livro">
+					<td><select id="livro" name="livro">
 							<c:forEach items="${livro}" var="lista">
-								<option value="${lista.codigo}">${lista.nome}</option>
+								<c:if test="${lista.quantidade > 0}">
+									<option value="${lista.codigo}">${lista.nome}</option>
+								</c:if>
 							</c:forEach>
-						</select>
-					</td>
+					</select></td>
 				</tr>
 
 
 				<tr id="listaMaterial" style="display: none">
 					<td>Material:</td>
-					<td>
-						<select id="material" name="material">
+					<td><select id="material" name="material">
 							<c:forEach items="${material}" var="lista">
-								<option value="${lista.codigo}">${lista.nome}</option>
+								<c:if test="${lista.quantidade > 0}">
+									<option value="${lista.codigo}">${lista.nome}</option>
+								</c:if>
 							</c:forEach>
-						</select>
-					</td>
+					</select></td>
 				</tr>
 
 				<tr id="listaPeriodico" style="display: none">
 					<td>Periodico:</td>
-					<td>
-						<select id="periodico" name="periodico">
+					<td><select id="periodico" name="periodico">
 							<c:forEach items="${periodico}" var="lista">
-								<option value="${lista.codigo}">${lista.nome}</option>
+								<c:if test="${lista.quantidade > 0}">
+									<option value="${lista.codigo}">${lista.nome}</option>
+								</c:if>
 							</c:forEach>
-						</select>
-					</td>
+					</select></td>
 				</tr>
 
 				<tr>
 					<td><br></td>
 				</tr>
-
 				<tr>
-					<td><input type="submit" Value="Próximo"> </td>
+					<td align="right">Data:</td>
+					<td><input type="text" name="data" id="data" readonly="true"></td>
+				</tr>
+				<tr>
+					<td><input type="submit" Value="Próximo"></td>
 				</tr>
 
 			</table>
@@ -125,6 +135,9 @@
 	</article>
 
 	<script type="text/javascript">
+		var d = new Date();
+		document.getElementById("data").value = d.toDateString();
+
 		function opcoes() {
 			var x = document.getElementById("mySelect").value;
 

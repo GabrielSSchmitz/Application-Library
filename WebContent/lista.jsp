@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="Estilo.css">
+
+<link rel="stylesheet" type="text/css" href="estilo.css">
 <script type="text/javascript" src="JavaScript.js"></script>
+
 <title>Biblioteca Tech</title>
 </head>
 <body>
@@ -15,38 +15,39 @@
 		<h1>Biblioteca Tech</h1>
 	</header>
 
+	<hr>
 
 	<nav>
-		<ul>
-			<li><a href="index.jsp">Index</a></li>
-			<li><a href="cadastro.jsp">Cadastro</a></li>
-			<li><a href="lista.jsp">Lista</a></li>
-			<li><a href="emprestimo.jsp">Emprestimo</a></li>
+		<a href="index.jsp"><button>Index</button></a> <a href="lista.jsp"><button>Lista</button></a>
+		<a href="cadastro.jsp"><button>Cadastro</button></a>
+		<div class="dropdown">
 
-			<ul>
-				<li><a href="cancelamento.jsp"> Cancelamento</a></li>
-				<li><a href="devolucao.jsp"> DevoluÃ§Ã£o</a></li>
-			</ul>
+			<a href="emprestimo.jsp"><button class="dropdown">Emprestimo</button></a>
 
-		</ul>
+			<div class="dropdown-content">
+
+				<a href="cancelamento.jsp"><button>Cancelamento</button></a> <a
+					href="devolucao.jsp"><button>Devolução</button></a>
+
+			</div>
+		</div>
 	</nav>
 
 	<article>
 
 		<h1>Lista</h1>
 
-		<ul>
-			<li><a href="ListaPessoa"> Pessoa</a></li>
-			<li><a href="ListaLivro">Livro</a></li>
-			<ul>
-				<li><a href="ListaAutor">Autor</a></li>
-				<li><a href="ListaEditora">Editora</a></li>
-			</ul>
-			<li><a href="ListaPeriodico">Periodico</a></li>
-			<li><a href="ListaMaterial">Material</a></li>
-			<li><a href="ListaEmprestimo">Emprestimo</a></li>
+		<a href="ListaPessoa" 		class = "list">	<button style="width: 100%;">Pessoa		</button></a> <br>
+		<a href="ListaLivro"  		class = "list">	<button style="width: 100%;">Livro		</button></a> <br>
 
-		</ul>
+		<a href="ListaAutor"  		class = "list">	<button style="width: 100%;">Autor		</button></a> <br>
+		<a href="ListaEditora"		class = "list">	<button style="width: 100%;">Editora	</button></a> <br>
+
+		<a href="ListaPeriodico" 	class = "list">	<button style="width: 100%;">Periodico	</button></a> <br>
+		<a href="ListaMaterial"		class = "list">	<button style="width: 100%;">Material	</button></a> <br>
+		<a href="ListaEmprestimo"	class = "list">	<button style="width: 100%;">Emprestimo	</button></a> <br>
+
+
 	</article>
 
 </body>

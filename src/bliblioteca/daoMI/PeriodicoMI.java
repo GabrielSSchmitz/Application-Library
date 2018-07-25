@@ -14,6 +14,22 @@ public class PeriodicoMI implements PeriodicoDAO {
 	public static ArrayList<Periodico> getConnection() {
 		return list;
 	}
+	
+	static public void emprestimo(int codigo) {
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getCodigo() == codigo) {
+				list.get(i).setQuantidade(list.get(i).getQuantidade() - 1);
+			}
+		}
+	}
+	
+	static public void devolucao(int codigo) {
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getCodigo() == codigo) {
+				list.get(i).setQuantidade(list.get(i).getQuantidade() + 1);
+			}
+		}
+	}
 
 //	----------------------------
 

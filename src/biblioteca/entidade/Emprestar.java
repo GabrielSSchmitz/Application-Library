@@ -6,33 +6,37 @@ public class Emprestar {
 	private Livro livro;
 	private Periodico periodico;
 	private int codigo;
+	private String data;
 
 //	----------------------------
 
-	public Emprestar(int codigo, Pessoa pessoa, Material material) {
+	public Emprestar(int codigo, Pessoa pessoa, Material material, String data) {
 		super();
 		this.codigo = codigo;
 		this.pessoa = pessoa;
 		this.material = material;
+		this.data = data;
 	}
 
-	public Emprestar(int codigo, Pessoa pessoa, Livro livro) {
+	public Emprestar(int codigo, Pessoa pessoa, Livro livro, String data) {
 		super();
 		this.codigo = codigo;
 		this.pessoa = pessoa;
 		this.livro = livro;
+		this.data = data;
 	}
 
-	public Emprestar(int codigo, Pessoa pessoa, Periodico periodico) {
+	public Emprestar(int codigo, Pessoa pessoa, Periodico periodico, String data) {
 		super();
 		this.codigo = codigo;
 		this.pessoa = pessoa;
 		this.periodico = periodico;
+		this.data = data;
 	}
 
 //	----------------------------
 
-	public Item item() {
+	public Item getItem() {
 		if (material != null) {
 			return material;
 		} else if (livro != null) {
@@ -82,6 +86,14 @@ public class Emprestar {
 
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
+	}
+
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 }

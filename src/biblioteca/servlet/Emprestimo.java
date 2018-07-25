@@ -14,6 +14,7 @@ import biblioteca.entidade.Livro;
 import biblioteca.entidade.Material;
 import biblioteca.entidade.Periodico;
 import biblioteca.entidade.Pessoa;
+import bliblioteca.daoMI.EmprestarMI;
 import bliblioteca.daoMI.LivroMI;
 import bliblioteca.daoMI.MaterialMI;
 import bliblioteca.daoMI.PeriodicoMI;
@@ -47,10 +48,10 @@ public class Emprestimo extends HttpServlet {
 
 		MaterialMI materialMI = new MaterialMI();
 		materialMI.setList(MaterialMI.getConnection());
-		
+
 		PeriodicoMI periodicoMI = new PeriodicoMI();
 		periodicoMI.setList(PeriodicoMI.getConnection());
-		
+
 //		----------------------------
 
 		if (acao.equals("verifica")) {
@@ -78,30 +79,40 @@ public class Emprestimo extends HttpServlet {
 //		----------------------------
 
 		if (acao.equals("emprestimo")) {
+			String data = request.getParameter("data");
+			System.out.println(data);
+
 			String cpf = request.getParameter("cpf");
 			Pessoa pessoa = pessoaMI.procuraPessoa(cpf);
-			Emprestar emprestar;
 
 //			----------------------------
-						
-			int size = MaterialMI.getConnection().size();
 
-			int codigo;
+			int size = EmprestarMI.getConnection().size();
+
+			int codigoId;
 			if (size == 0) {
-				codigo = 0;
+				codigoId = 0;
 			} else {
-				codigo = MaterialMI.getConnection().get(size - 1).getCodigo();
-				codigo++;
+				codigoId = EmprestarMI.getConnection().get(size - 1).getCodigo();
+				codigoId++;
 			}
 
 //			----------------------------
-			
+
 			if (request.getParameter("livro") != null) {
 				String codigoString = request.getParameter("livro");
 				int codigo = Integer.parseInt(codigoString);
-				
+
 				Livro livro = livroMI.procuraLivro(codigo);
-				emprestar = new Emprestar(codigo, pessoa, livro);
+				
+				LivroMI.emprestimo(livro.getCodigo());
+				
+				Emprestar emprestar = new Emprestar(codigoId, pessoa, livro, data);
+								
+				EmprestarMI.getConnection().add(emprestar);
+
+				RequestDispatcher rd = request.getRequestDispatcher("ListaEmprestimo");
+				rd.forward(request, response);
 			}
 
 //			----------------------------
@@ -109,8 +120,16 @@ public class Emprestimo extends HttpServlet {
 			if (request.getParameter("material") != null) {
 				String codigoString = request.getParameter("material");
 				int codigo = Integer.parseInt(codigoString);
-				
+
 				Material material = materialMI.procuraMaterial(codigo);
+				MaterialMI.emprestimo(material.getCodigo());
+				
+				Emprestar emprestar = new Emprestar(codigoId, pessoa, material, data);
+
+				EmprestarMI.getConnection().add(emprestar);
+
+				RequestDispatcher rd = request.getRequestDispatcher("ListaEmprestimo");
+				rd.forward(request, response);
 			}
 
 //			----------------------------
@@ -118,8 +137,16 @@ public class Emprestimo extends HttpServlet {
 			if (request.getParameter("periodico") != null) {
 				String codigoString = request.getParameter("periodico");
 				int codigo = Integer.parseInt(codigoString);
-				
+
 				Periodico periodico = periodicoMI.procuraPeriodicol(codigo);
+				PeriodicoMI.emprestimo(periodico.getCodigo());
+				
+				Emprestar emprestar = new Emprestar(codigoId, pessoa, periodico, data);
+
+				EmprestarMI.getConnection().add(emprestar);
+
+				RequestDispatcher rd = request.getRequestDispatcher("ListaEmprestimo");
+				rd.forward(request, response);
 			}
 		}
 

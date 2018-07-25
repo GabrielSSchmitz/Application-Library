@@ -3,27 +3,35 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="Estilo.css">
+
+<link rel="stylesheet" type="text/css" href="estilo.css">
 <script type="text/javascript" src="JavaScript.js"></script>
+
 <title>Biblioteca Tech</title>
 </head>
 <body>
 
-	<header> <h1> Biblioteca Tech </h1></header>
+	<header>
+		<h1>Biblioteca Tech</h1>
+	</header>
+
+	<hr>
 
 	<nav>
-		<ul>
-			<li><a href="index.jsp">Index</a></li>
-			<li><a href="cadastro.jsp">Cadastro</a></li>
-			<li><a href="lista.jsp">Lista</a></li>
-			<li><a href="emprestimo.jsp">Emprestimo</a></li>
-
-			<ul>
-				<li><a href="cancelamento.jsp"> Cancelamento</a></li>
-				<li><a href="devolucao.jsp"> Devolução</a></li>
-			</ul>
-
-		</ul>
+			<a href="index.jsp"><button>Index</button></a>
+			<a href="lista.jsp"><button>Lista</button></a>
+			<a href="cadastro.jsp"><button>Cadastro</button></a>
+			<div class="dropdown">
+			
+				<a href="emprestimo.jsp"><button class="dropdown">Emprestimo</button></a>
+				
+				<div class="dropdown-content">
+				
+					<a href="cancelamento.jsp"><button>Cancelamento</button></a> 
+					<a href="devolucao.jsp"><button>Devolução</button></a>
+					
+				</div>
+			</div>
 	</nav>
 	
 	<article>

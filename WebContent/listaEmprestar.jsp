@@ -36,32 +36,30 @@
 
 	<article>
 
-		<h1>Lista livro</h1>
+		<h1>Lista emprestar</h1>
 
 		<form method="post" action="ListaLivro">
 			<table border="1">
 				<tr>
 
-					<th align="left"><b> Identificador </b></th>
-					<th align="left"><b> Titulo </b></th>
+					<th align="left"><b> Código </b></th>
+					<th align="left"><b> CPF </b></th>
+					<th align="left"><b> Nome </b></th>
+					<th align="left"><b> Item </b></th>
+					<th align="left"><b> Item código </b></th>
 					<th align="left"><b> Data </b></th>
-					<th align="left"><b> Edição </b></th>
-					<th align="left"><b> Volume </b></th>
-					<th align="left"><b> Editora </b></th>
-					<th align="left"><b> Autor </b></th>
 
 				</tr>
 
-				<c:forEach items="${livrollista}" var="lista">
+				<c:forEach items="${emprestarLista}" var="lista">
 
 					<tr>
 						<td>${lista.codigo}</td>
-						<td>${lista.nome}</td>
-						<td>${lista.data}</td>
-						<td>${lista.edicao}</td>
-						<td>${lista.volume}</td>
-						<td>${lista.editora.nome}</td>
-						<td>${lista.autor.nome}</td>
+						<td>${lista.pessoa.cpf}</td>
+						<td>${lista.pessoa.nome}</td>
+						<td>${lista.item.nome}</td>						
+						<td>${lista.item.codigo}</td>						
+						<td>${lista.data}</td>						
 					</tr>
 
 				</c:forEach>
