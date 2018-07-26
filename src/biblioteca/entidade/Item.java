@@ -1,6 +1,7 @@
 package biblioteca.entidade;
 
 public interface Item {
+	// Ser Classe pai
 	int codigo = 0;
 	int tipo = 0;
 	String nome = "";
