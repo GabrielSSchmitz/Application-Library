@@ -127,9 +127,11 @@ public class Emprestimo extends HttpServlet {
 
 				int codigo = Integer.parseInt(request.getParameter("periodico"));
 
+				
+				Periodico periodico = periodicoMI.procuraPeriodicol(codigo);
+				item = periodico;
+		
 				PeriodicoMI.devolucao(codigo);
-
-				item = periodicoMI.procuraPeriodicol(codigo);
 			}
 
 //			----------------------------
