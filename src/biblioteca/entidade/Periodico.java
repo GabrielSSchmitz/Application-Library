@@ -10,6 +10,7 @@ public class Periodico implements Item {
 
 	private int volume;
 	private int quantidade;
+	private int quantidadeEmprestimo;
 
 //	----------------------------
 
@@ -20,6 +21,7 @@ public class Periodico implements Item {
 		this.nome = nome;
 		this.volume = volume;
 		this.quantidade = quantidade;
+		this.quantidadeEmprestimo = quantidade;
 	}
 
 //	----------------------------
@@ -61,6 +63,14 @@ public class Periodico implements Item {
 
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
+	}
+
+	public int getQuantidadeEmprestimo() {
+		return quantidadeEmprestimo;
+	}
+
+	public void setQuantidadeEmprestimo(int quantidadeEmprestimo) {
+		this.quantidadeEmprestimo = quantidadeEmprestimo;
 	}
 
 }

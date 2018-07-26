@@ -53,8 +53,7 @@
 				</tr>
 
 				<tr>
-					<td><br></td>
-					<td align="left"><button type="submit">Próximo</button></td>
+					<td colspan="2" align="right"><input type="submit" class="list" value="Proximo"></td>
 				</tr>
 
 			</table>

@@ -56,7 +56,7 @@ public class CadastroMaterial extends HttpServlet {
 
 //		----------------------------
 
-		RequestDispatcher rd = request.getRequestDispatcher("/cadastro.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("ListaMaterial");
 		rd.forward(request, response);
 	}
 

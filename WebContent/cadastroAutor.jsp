@@ -63,9 +63,7 @@
 				</tr>
 
 				<tr>
-					<td colspan="2" align="right">
-						<button type="submit">Cadastrar</button>
-					</td>
+					<td colspan="2" align="right"><input type="submit" class="list" value="Cadastrar"></td>
 				</tr>
 
 			</table>

@@ -42,20 +42,20 @@
 
 				<tr>
 					<td align="right">Nome :</td>
-					<td align="right"><input type="text" name="nome" id="nome">
+					<td align="right"><input type="text" name="nome" id="nome" style="width: 100%;">
 					</td>
 				</tr>
 
 				<tr>
 					<td align="right">Volume :</td>
 					<td align="left"><input type="number" name="volume"
-						min="1" max="99" style="width: 98%;"></td>
+						min="1" max="99" style="width: 98%;" style="width: 100%;"></td>
 				</tr>
 
 				<tr>
 					<td align="right">Quantidade :</td>
 					<td align="left"><input type="number" name="quantidade"
-						min="1" max="99" style="width: 98%;"></td>
+						min="1" max="99" style="width: 98%;" style="width: 100%;"></td>
 				</tr>
 
 				<tr>
@@ -63,9 +63,7 @@
 				</tr>
 
 				<tr>
-					<td colspan="2">
-						<button type="submit" style="width: 100%;">Cadastrar</button>
-					</td>
+					<td colspan="2" align="right"><input type="submit" class="list" value="Cadastrar"></td>
 				</tr>
 
 			</table>

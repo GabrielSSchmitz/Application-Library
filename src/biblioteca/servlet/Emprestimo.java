@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import biblioteca.entidade.Emprestar;
+import biblioteca.entidade.Item;
 import biblioteca.entidade.Livro;
 import biblioteca.entidade.Material;
 import biblioteca.entidade.Periodico;
@@ -34,6 +35,7 @@ public class Emprestimo extends HttpServlet {
 		doPost(request, response);
 	}
 
+	@SuppressWarnings("static-access")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String acao = request.getParameter("acao");
@@ -43,21 +45,11 @@ public class Emprestimo extends HttpServlet {
 		PessoaMI pessoaMI = new PessoaMI();
 		pessoaMI.setList(PessoaMI.getConnection());
 
-		LivroMI livroMI = new LivroMI();
-		livroMI.setList(LivroMI.getConnection());
-
-		MaterialMI materialMI = new MaterialMI();
-		materialMI.setList(MaterialMI.getConnection());
-
-		PeriodicoMI periodicoMI = new PeriodicoMI();
-		periodicoMI.setList(PeriodicoMI.getConnection());
-
 //		----------------------------
 
 		if (acao.equals("verifica")) {
 
 			String cpf = request.getParameter("cpf");
-
 			if (pessoaMI.cpfIsCadastrado(cpf)) {
 
 				request.setAttribute("pessoa", pessoaMI.procuraPessoa(cpf));
@@ -79,10 +71,14 @@ public class Emprestimo extends HttpServlet {
 //		----------------------------
 
 		if (acao.equals("emprestimo")) {
+			
+			Item item = null;
+			
 			String data = request.getParameter("data");
 			System.out.println(data);
 
 			String cpf = request.getParameter("cpf");
+			@SuppressWarnings("unused")
 			Pessoa pessoa = pessoaMI.procuraPessoa(cpf);
 
 //			----------------------------
@@ -100,54 +96,51 @@ public class Emprestimo extends HttpServlet {
 //			----------------------------
 
 			if (request.getParameter("livro") != null) {
-				String codigoString = request.getParameter("livro");
-				int codigo = Integer.parseInt(codigoString);
+				LivroMI livroMI = new LivroMI();
+				livroMI.setList(LivroMI.getConnection());
 
-				Livro livro = livroMI.procuraLivro(codigo);
-				
-				LivroMI.emprestimo(livro.getCodigo());
-				
-				Emprestar emprestar = new Emprestar(codigoId, pessoa, livro, data);
-								
-				EmprestarMI.getConnection().add(emprestar);
+				int codigo = Integer.parseInt(request.getParameter("livro"));
 
-				RequestDispatcher rd = request.getRequestDispatcher("ListaEmprestimo");
-				rd.forward(request, response);
+				LivroMI.emprestimo(codigo);
+
+				item = livroMI.procuraLivro(codigo);
 			}
 
 //			----------------------------
 
 			if (request.getParameter("material") != null) {
-				String codigoString = request.getParameter("material");
-				int codigo = Integer.parseInt(codigoString);
+				MaterialMI materialMI = new MaterialMI();
+				materialMI.setList(MaterialMI.getConnection());
 
-				Material material = materialMI.procuraMaterial(codigo);
-				MaterialMI.emprestimo(material.getCodigo());
-				
-				Emprestar emprestar = new Emprestar(codigoId, pessoa, material, data);
+				int codigo = Integer.parseInt(request.getParameter("material"));
 
-				EmprestarMI.getConnection().add(emprestar);
+				MaterialMI.emprestimo(codigo);
 
-				RequestDispatcher rd = request.getRequestDispatcher("ListaEmprestimo");
-				rd.forward(request, response);
+				item = materialMI.procuraMaterial(codigo);
 			}
 
 //			----------------------------
 
 			if (request.getParameter("periodico") != null) {
-				String codigoString = request.getParameter("periodico");
-				int codigo = Integer.parseInt(codigoString);
+				PeriodicoMI periodicoMI = new PeriodicoMI();
+				periodicoMI.setList(PeriodicoMI.getConnection());
 
-				Periodico periodico = periodicoMI.procuraPeriodicol(codigo);
-				PeriodicoMI.emprestimo(periodico.getCodigo());
-				
-				Emprestar emprestar = new Emprestar(codigoId, pessoa, periodico, data);
+				int codigo = Integer.parseInt(request.getParameter("periodico"));
 
-				EmprestarMI.getConnection().add(emprestar);
+				PeriodicoMI.devolucao(codigo);
 
-				RequestDispatcher rd = request.getRequestDispatcher("ListaEmprestimo");
-				rd.forward(request, response);
+				item = periodicoMI.procuraPeriodicol(codigo);
 			}
+
+//			----------------------------
+
+			Emprestar emprestar = new Emprestar(codigoId, item, data, pessoa);
+			EmprestarMI.getConnection().add(emprestar);
+
+//			----------------------------
+
+			RequestDispatcher rd = request.getRequestDispatcher("ListaEmprestimo");
+			rd.forward(request, response);
 		}
 
 	}

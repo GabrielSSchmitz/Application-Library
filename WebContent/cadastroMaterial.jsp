@@ -44,21 +44,21 @@
 				<tr>
 					<td align="right">Nome :</td>
 					<td align="right">
-						<input type="text" name="nome" id="nome">
+						<input type="text" name="nome" id="nome" style="width: 100%;">
 					</td>
 				</tr>
 
 				<tr>
 					<td align="right">Descrição :</td>
 					<td align="right">
-						<input type="text" name="descricao"id="descricao">
+						<input type="text" name="descricao"id="descricao" style="width: 100%;">
 					</td>
 				</tr>
 
 				<tr>
 					<td align="right">Tipo :</td>
 					<td align="right">
-					<select name="tipo" style="width: 100%;">
+					<select name="tipo" style="width: 109%;">
 							<option>DVD</option>
 							<option>CD</option>
 							<option>FITA</option>
@@ -66,7 +66,7 @@
 				</tr>
 				<tr>
 					<td align="right">Quantidade :</td>
-					<td align="left"><input type="number" name="quantidade" min="1" max="99" style="width: 98%;"></td>
+					<td align="left"><input type="number" name="quantidade" min="1" max="99" style="width: 100%;"></td>
 				</tr>
 
 				<tr>
@@ -74,9 +74,7 @@
 				</tr>
 
 				<tr>
-					<td colspan="2"> 
-						<button type="submit" style="width: 100%;">Cadastrar</button>
-					</td>
+					<td colspan="2" align="right"><input type="submit" class="list" value="Cadastrar"></td>
 				</tr>
 
 			</table>

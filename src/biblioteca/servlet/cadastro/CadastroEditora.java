@@ -58,7 +58,7 @@ public class CadastroEditora extends HttpServlet {
 
 //		----------------------------
 
-		RequestDispatcher rd = request.getRequestDispatcher("/cadastro.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("ListaEditora");
 		rd.forward(request, response);
 	}
 

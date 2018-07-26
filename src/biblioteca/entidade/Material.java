@@ -10,6 +10,8 @@ public class Material implements Item {
 	private String descricao;
 	private String material;
 	private int quantidade;
+	private int quantidadeEmprestimo;
+	
 	
 //	----------------------------
 	
@@ -21,6 +23,7 @@ public class Material implements Item {
 		this.descricao = descricao;
 		this.material = material;
 		this.quantidade = quantidade;
+		this.quantidadeEmprestimo = quantidade;
 	}
 
 //	----------------------------
@@ -71,6 +74,14 @@ public class Material implements Item {
 
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
+	}
+
+	public int getQuantidadeEmprestimo() {
+		return quantidadeEmprestimo;
+	}
+
+	public void setQuantidadeEmprestimo(int quantidadeEmprestimo) {
+		this.quantidadeEmprestimo = quantidadeEmprestimo;
 	}
 
 	

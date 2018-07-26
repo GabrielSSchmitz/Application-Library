@@ -38,8 +38,8 @@
 
 		<h1>Lista material</h1>
 		<form method="get" action="listaMaterial">
-			<table border="1">
-				<tr>
+			<table class="lista">
+				<tr class="lista">
 
 					<th align="left"><b> Código </b></th>
 					<th align="left"><b> Nome </b></th>
@@ -51,7 +51,7 @@
 
 				<c:forEach items="${materialLista}" var="lista">
 
-					<tr>
+					<tr class="listaSeleçao">
 						<td>${lista.codigo}</td>
 						<td>${lista.nome}</td>
 						<td>${lista.descricao}</td>
@@ -62,7 +62,7 @@
 				</c:forEach>
 
 			</table>
-			</br> <a href="lista.jsp"> Voltar </a>
+			</br> <a href="lista.jsp" class="list"> Voltar </a>
 		</form>
 	</article>
 

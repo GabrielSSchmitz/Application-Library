@@ -28,4 +28,12 @@ public class EmprestarMI implements EmprestarDAO {
 		return null;
 	}
 
+	public static ArrayList<Emprestar> getList() {
+		return list;
+	}
+
+	public static void setList(ArrayList<Emprestar> list) {
+		EmprestarMI.list = list;
+	}
+
 }

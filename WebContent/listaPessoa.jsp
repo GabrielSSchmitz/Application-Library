@@ -39,8 +39,8 @@
 		<h1>Lista pessoa</h1>
 
 		<form method="post" action="ListaPessoa">
-			<table border="1">
-				<tr>
+			<table class="lista">
+				<tr  class="lista">
 					<th align="left"><b> CPF </b></th>
 					<th align="left"><b> Nome </b></th>
 					<th align="left"><b> Telefone </b></th>
@@ -48,7 +48,7 @@
 
 				<c:forEach items="${listaPessoa}" var="lista">
 
-					<tr>
+					<tr  class="listaSeleçao">
 						<td>${lista.cpf}</td>
 						<td>${lista.nome}</td>
 						<td>${lista.telefone}</td>
@@ -57,7 +57,7 @@
 				</c:forEach>
 
 			</table>
-			<br> <a href="lista.jsp"> Voltar </a>
+			</br> <a href="lista.jsp" class="list"> Voltar </a>
 		</form>
 	</article>
 

@@ -1,52 +1,30 @@
 package biblioteca.entidade;
 
 public class Emprestar {
-	private Pessoa pessoa;
-	private Material material;
-	private Livro livro;
+	private Item item;
 	private Periodico periodico;
+	private Pessoa pessoa;
 	private int codigo;
 	private String data;
+	private boolean emprestimo;
 
 //	----------------------------
 
-	public Emprestar(int codigo, Pessoa pessoa, Material material, String data) {
+	public Emprestar(int codigo, Item item, String data, Pessoa pessoa) {
 		super();
 		this.codigo = codigo;
-		this.pessoa = pessoa;
-		this.material = material;
 		this.data = data;
+		this.emprestimo = true;
+		this.pessoa = pessoa;
 	}
 
-	public Emprestar(int codigo, Pessoa pessoa, Livro livro, String data) {
-		super();
-		this.codigo = codigo;
-		this.pessoa = pessoa;
-		this.livro = livro;
-		this.data = data;
-	}
-
-	public Emprestar(int codigo, Pessoa pessoa, Periodico periodico, String data) {
-		super();
-		this.codigo = codigo;
-		this.pessoa = pessoa;
-		this.periodico = periodico;
-		this.data = data;
-	}
+//	----------------------------
 
 //	----------------------------
 
 	public Item getItem() {
-		if (material != null) {
-			return material;
-		} else if (livro != null) {
-			return livro;
-		} else {
-			return periodico;
-		}
+		return item;
 	}
-
-//	----------------------------
 
 	public Pessoa getPessoa() {
 		return pessoa;
@@ -56,20 +34,16 @@ public class Emprestar {
 		this.pessoa = pessoa;
 	}
 
-	public Material getMaterial() {
-		return material;
+	public void setItem(Item item) {
+		this.item = item;
 	}
 
-	public void setMaterial(Material material) {
-		this.material = material;
+	public boolean isEmprestimo() {
+		return emprestimo;
 	}
 
-	public Livro getLivro() {
-		return livro;
-	}
-
-	public void setLivro(Livro livro) {
-		this.livro = livro;
+	public void setEmprestimo(boolean emprestimo) {
+		this.emprestimo = emprestimo;
 	}
 
 	public Periodico getPeriodico() {

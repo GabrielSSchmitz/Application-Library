@@ -35,31 +35,32 @@
 
 	<article>
 
-		<h1>Lista periodicos</h1>
-		<form method="get" action="listaMaterial">
-			<table class="lista">
-				<tr class="lista">
+		<h1>Devolução</h1>
 
-					<th align="left"><b> Código </b></th>
-					<th align="left"><b> Nome </b></th>
-					<th align="left"><b> Volume </b></th>
-					<th align="left"><b> Quantidade </b></th>
+		<form method="post" action="Devolucao">
+			<table>
 
+				<tr>
+					<td align="right">Informe o seu CPF:</td>
+					<td><input type="text" name="cpf" id="cpf"></td>
 				</tr>
 
-				<c:forEach items="${periodicoLista}" var="lista">
+				<tr>
+					<td align="right">Código do material:</td>
+					<td><input type="text" name="codigo" id="codigo"></td>
+				</tr>
 
-					<tr class="listaSeleçao">
-						<td>${lista.codigo}</td>
-						<td>${lista.nome}</td>
-						<td>${lista.volume}</td>
-						<td>${lista.quantidade}</td>
-					</tr>
+				<tr>
+					<td><br></td>
+				</tr>
 
-				</c:forEach>
+				<tr>
+					<td><br></td>
+					<td align="right"><input type="submit" class="list" value="Devolução"></td>
+				</tr>
 
 			</table>
-			</br> <a href="lista.jsp" class="list"> Voltar </a>
+
 		</form>
 	</article>
 

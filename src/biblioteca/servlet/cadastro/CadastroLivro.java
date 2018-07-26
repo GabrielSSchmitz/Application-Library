@@ -92,7 +92,7 @@ public class CadastroLivro extends HttpServlet {
 
 //			----------------------------
 
-			RequestDispatcher rd = request.getRequestDispatcher("/cadastro.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("ListaLivro");
 			rd.forward(request, response);
 		}
 

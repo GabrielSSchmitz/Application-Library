@@ -16,7 +16,7 @@ public class LivroMI implements LivroDAO {
 	static public void emprestimo(int codigo) {
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getCodigo() == codigo) {
-				list.get(i).setQuantidade(list.get(i).getQuantidade() - 1);
+				list.get(i).setQuantidadeEmprestimo(list.get(i).getQuantidadeEmprestimo() - 1);
 			}
 		}
 	}
@@ -24,7 +24,7 @@ public class LivroMI implements LivroDAO {
 	static public void devolucao(int codigo) {
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getCodigo() == codigo) {
-				list.get(i).setQuantidade(list.get(i).getQuantidade() + 1);
+				list.get(i).setQuantidadeEmprestimo(list.get(i).getQuantidadeEmprestimo() + 1);
 			}
 		}
 	}

@@ -36,18 +36,16 @@
 
 	<article>
 
-		<h1>Cadastro</h1>
+		<h1>Cadastro </h1>
 
-		<ul>
-			<li><a href="cadastroPessoa.jsp"> Pessoa</a></li>
-			<li><a href="CadastroLivro?acao=lista">Livro</a></li>
-			<ul>
-				<li><a href="cadastroAutor.jsp">Autor</a></li>
-				<li><a href="cadastroEditora.jsp">Editora</a></li>
-			</ul>
-			<li><a href="cadastroPeriodico.jsp">Periodico</a></li>
-			<li><a href="cadastroMaterial.jsp">Material</a></li>
-		</ul>
+		<a href="cadastroPessoa.jsp" 		class = "list">	<button style="width: 100%;">Pessoa		</button></a> <br>
+		<a href="CadastroLivro?acao=lista"  class = "list">	<button style="width: 100%;">Livro		</button></a> <br>
+
+		<a href="cadastroAutor.jsp"  		class = "list">	<button style="width: 100%;">Autor		</button></a> <br>
+		<a href="cadastroEditora.jsp"		class = "list">	<button style="width: 100%;">Editora	</button></a> <br>
+
+		<a href="cadastroPeriodico.jsp" 	class = "list">	<button style="width: 100%;">Periodico	</button></a> <br>
+		<a href="cadastroMaterial.jsp"		class = "list">	<button style="width: 100%;">Material	</button></a> <br>
 	</article>
 
 </body>

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import biblioteca.entidade.Periodico;
+import bliblioteca.daoMI.EditoraMI;
 import bliblioteca.daoMI.MaterialMI;
 import bliblioteca.daoMI.PeriodicoMI;
 
@@ -17,48 +18,50 @@ import bliblioteca.daoMI.PeriodicoMI;
 public class CadastroPeriodico extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public CadastroPeriodico() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	public CadastroPeriodico() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doPost(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String nome = request.getParameter("nome");
-		
+
 		String volumeString = request.getParameter("volume");
 		int volume = Integer.parseInt(volumeString);
-		
+
 		String quantidadeString = request.getParameter("quantidade");
 		int quantidade = Integer.parseInt(quantidadeString);
 
 //		----------------------------
 
 		int size = PeriodicoMI.getConnection().size();
-
+		
 		int codigo;
+		
 		if (size == 0) {
 			codigo = 0;
 		} else {
-			codigo = MaterialMI.getConnection().get(size - 1).getCodigo();
+			codigo = PeriodicoMI.getConnection().get(size-1).getCodigo();
 			codigo++;
 		}
 
 //		----------------------------
-		
+
 		Periodico periodico = new Periodico(codigo, 3, nome, volume, quantidade);
-		
+
 		PeriodicoMI.getConnection().add(periodico);
 
 //		----------------------------
-		
-		RequestDispatcher rd = request.getRequestDispatcher("/cadastro.jsp");
+
+		RequestDispatcher rd = request.getRequestDispatcher("ListaPeriodico");
 		rd.forward(request, response);
-		
+
 	}
 
 }

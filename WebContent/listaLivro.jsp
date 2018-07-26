@@ -39,8 +39,8 @@
 		<h1>Lista livro</h1>
 
 		<form method="post" action="ListaLivro">
-			<table border="1">
-				<tr>
+			<table class="lista">
+				<tr class="lista">
 
 					<th align="left"><b> Identificador </b></th>
 					<th align="left"><b> Titulo </b></th>
@@ -67,7 +67,7 @@
 				</c:forEach>
 
 			</table>
-			</br> <a href="lista.jsp" align="center"> Voltar </a>
+			</br> <a href="lista.jsp" class="list"> Voltar </a>
 		</form>
 
 	</article>

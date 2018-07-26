@@ -39,9 +39,9 @@
 		<h1>Lista livros</h1>
 
 		<form method="get" action="listaPessoa">
-			<table border="1">
+			<table class="lista">
 
-				<tr>
+				<tr class="lista">
 
 					<th align="left"><b> Codigo </b></th>
 					<th align="left"><b> Nome </b></th>
@@ -51,7 +51,7 @@
 
 				<c:forEach items="${autorLista}" var="lista">
 
-					<tr>
+					<tr class="listaSeleçao">
 						<td>${lista.codigo}</td>
 						<td>${lista.nome}</td>
 						<td>${lista.sobrenome}</td>
@@ -60,7 +60,7 @@
 				</c:forEach>
 
 			</table>
-			<br> <a href="lista.jsp"> Voltar </a>
+			</br> <a href="lista.jsp" class="list"> Voltar </a>
 		</form>
 	</article>
 

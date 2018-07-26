@@ -18,22 +18,21 @@
 	<hr>
 
 	<nav>
-			<a href="index.jsp"><button>Index</button></a>
-			<a href="lista.jsp"><button>Lista</button></a>
-			<a href="cadastro.jsp"><button>Cadastro</button></a>
-			<div class="dropdown">
-			
-				<a href="emprestimo.jsp"><button class="dropdown">Emprestimo</button></a>
-				
-				<div class="dropdown-content">
-				
-					<a href="cancelamento.jsp"><button>Cancelamento</button></a> 
-					<a href="devolucao.jsp"><button>Devolução</button></a>
-					
-				</div>
+		<a href="index.jsp"><button>Index</button></a> <a href="lista.jsp"><button>Lista</button></a>
+		<a href="cadastro.jsp"><button>Cadastro</button></a>
+		<div class="dropdown">
+
+			<a href="emprestimo.jsp"><button class="dropdown">Emprestimo</button></a>
+
+			<div class="dropdown-content">
+
+				<a href="cancelamento.jsp"><button>Cancelamento</button></a> <a
+					href="devolucao.jsp"><button>Devolução</button></a>
+
 			</div>
+		</div>
 	</nav>
-	
+
 	<article>
 
 		<h1>Emprestimo</h1>
@@ -82,51 +81,62 @@
 				<tr>
 					<td><br></td>
 				</tr>
+				
 
+				<!-- ========================================================== -->
+		
+						<tr id="listaLivro" style="display: none">
+							<td>Livro:</td>
+							<td><select id="livro" name="livro">
+									<c:forEach items="${livro}" var="lista">
+										<c:if test="${lista.quantidadeEmprestimo > 0}">
+											<option value="${lista.codigo}">${lista.nome}</option>
+										</c:if>
+									</c:forEach>
+							</select></td>
+						</tr>
+		
+		
+						<tr id="listaMaterial" style="display: none">
+							<td>Material:</td>
+							<td><select id="material" name="material">
+									<c:forEach items="${material}" var="lista">
+										<c:if test="${lista.quantidadeEmprestimo > 0}">
+											<option value="${lista.codigo}">${lista.nome}</option>
+										</c:if>
+									</c:forEach>
+							</select></td>
+						</tr>
+		
+						<tr id="listaPeriodico" style="display: none">
+							<td>Periodico:</td>
+							<td><select id="periodico" name="periodico">
+									<c:forEach items="${periodico}" var="lista">
+										<c:if test="${lista.quantidadeEmprestimo > 0}">
+											<option value="${lista.codigo}">${lista.nome}</option>
+										</c:if>
+									</c:forEach>
+							</select></td>
+						</tr>
 
-				<tr id="listaLivro" style="display: none">
-					<td>Livro:</td>
-					<td><select id="livro" name="livro">
-							<c:forEach items="${livro}" var="lista">
-								<c:if test="${lista.quantidade > 0}">
-									<option value="${lista.codigo}">${lista.nome}</option>
-								</c:if>
-							</c:forEach>
-					</select></td>
-				</tr>
+				<!-- ========================================================== -->
 
-
-				<tr id="listaMaterial" style="display: none">
-					<td>Material:</td>
-					<td><select id="material" name="material">
-							<c:forEach items="${material}" var="lista">
-								<c:if test="${lista.quantidade > 0}">
-									<option value="${lista.codigo}">${lista.nome}</option>
-								</c:if>
-							</c:forEach>
-					</select></td>
-				</tr>
-
-				<tr id="listaPeriodico" style="display: none">
-					<td>Periodico:</td>
-					<td><select id="periodico" name="periodico">
-							<c:forEach items="${periodico}" var="lista">
-								<c:if test="${lista.quantidade > 0}">
-									<option value="${lista.codigo}">${lista.nome}</option>
-								</c:if>
-							</c:forEach>
-					</select></td>
-				</tr>
 
 				<tr>
 					<td><br></td>
 				</tr>
+				
 				<tr>
 					<td align="right">Data:</td>
 					<td><input type="text" name="data" id="data" readonly="true"></td>
 				</tr>
+				
 				<tr>
-					<td><input type="submit" Value="Próximo"></td>
+					<td><br></td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="right"><input type="submit"	class="list" value="Cadastrar"></td>
 				</tr>
 
 			</table>

@@ -1,20 +1,20 @@
 package biblioteca.entidade;
 
-
 public class Livro implements Item {
 	private int codigo = 0;
 	private int tipo = 0;
 	private String nome = "";
 
 //	----------------------------
-	
+
 	private String data;
 	private int edicao;
 	private int volume;
 	private Editora editora;
 	private Autor autor;
 	private int quantidade;
-	
+	private int quantidadeEmprestimo;
+
 //	----------------------------
 
 	public Livro(int codigo, int tipo, String nome, String data, int edicao, int volume, Editora editora, Autor autor,
@@ -29,9 +29,18 @@ public class Livro implements Item {
 		this.editora = editora;
 		this.autor = autor;
 		this.quantidade = quantidade;
+		this.quantidadeEmprestimo = quantidade;
 	}
-	
+
 //	----------------------------
+
+	public int getQuantidadeEmprestimo() {
+		return quantidadeEmprestimo;
+	}
+
+	public void setQuantidadeEmprestimo(int quantidadeEmprestimo) {
+		this.quantidadeEmprestimo = quantidadeEmprestimo;
+	}
 
 	public int getCodigo() {
 		return codigo;

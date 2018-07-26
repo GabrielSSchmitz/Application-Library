@@ -41,7 +41,7 @@ public class CadastroPessoa extends HttpServlet {
 
 //		----------------------------
 
-		RequestDispatcher rd = request.getRequestDispatcher("/cadastro.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("ListaPessoa");
 		rd.forward(request, response);
 	}
 
