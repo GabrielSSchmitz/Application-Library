@@ -44,13 +44,13 @@
 
 				<tr>
 					<td align="right">Nome :</td>
-					<td align="right"><input type="text" name="nome" id="nome"></td>
+					<td align="right"><input type="text" name="nome" id="nome" required></td>
 				</tr>
 
 				<tr>
 					<td align="right">Nacional :</td>
 					<td align="left"><input type="checkbox" name="nacional"
-						id="nacional"></td>
+						id="nacional" required></td>
 				</tr>
 
 				<tr>

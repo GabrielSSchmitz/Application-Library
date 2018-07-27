@@ -42,7 +42,7 @@ public class CadastroMaterial extends HttpServlet {
 
 		int codigo;
 		if (size == 0) {
-			codigo = 0;
+			codigo = 2020;
 		} else {
 			codigo = MaterialMI.getConnection().get(size - 1).getCodigo();
 			codigo++;

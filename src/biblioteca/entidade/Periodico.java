@@ -1,6 +1,6 @@
 package biblioteca.entidade;
 
-public class Periodico implements Item {
+public class Periodico extends Item {
 
 	private int codigo = 0;
 	private int tipo = 0;

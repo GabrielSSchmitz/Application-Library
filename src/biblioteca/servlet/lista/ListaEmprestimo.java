@@ -31,14 +31,6 @@ public class ListaEmprestimo extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		for (int i = 0; i < EmprestarMI.getConnection().size(); i++) {
-			System.out.println("Código: " + EmprestarMI.getConnection().get(i).getCodigo());
-			System.out.println("Cpf: " + EmprestarMI.getConnection().get(i).getPessoa().getCpf());
-			System.out.println("Nome: " + EmprestarMI.getConnection().get(i).getPessoa().getNome());
-			System.out.println("Item: " + EmprestarMI.getConnection().get(i).getItem().getNome());
-			System.out.println("Codigo item" + EmprestarMI.getConnection().get(i).getItem().getCodigo());
-			System.out.println("Data: " + EmprestarMI.getConnection().get(i).getData());
-		}
 		request.setAttribute("emprestarLista", EmprestarMI.getConnection());
 		RequestDispatcher rd = request.getRequestDispatcher("/listaEmprestar.jsp");
 		rd.forward(request, response);

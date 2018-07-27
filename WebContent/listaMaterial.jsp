@@ -41,11 +41,12 @@
 			<table class="lista">
 				<tr class="lista">
 
-					<th align="left"><b> Código </b></th>
-					<th align="left"><b> Nome </b></th>
-					<th align="left"><b> Descrição </b></th>
-					<th align="left"><b> Tipo </b></th>
-					<th align="left"><b> Quantidade </b></th>
+					<th align="center"><b> Código </b></th>
+					<th align="center"><b> Nome </b></th>
+					<th align="center"><b> Descrição </b></th>
+					<th align="center"><b> Tipo </b></th>
+					<th align="center"><b> Quantidade </b></th>
+					<th align="center"><b> Quantidade disponivel</b></th>
 
 				</tr>
 
@@ -57,6 +58,7 @@
 						<td>${lista.descricao}</td>
 						<td>${lista.material}</td>
 						<td>${lista.quantidade}</td>
+						<td>${lista.quantidadeEmprestimo}</td>
 					</tr>
 
 				</c:forEach>

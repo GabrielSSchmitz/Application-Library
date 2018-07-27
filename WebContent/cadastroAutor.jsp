@@ -44,18 +44,18 @@
 
 				<tr>
 					<td align="right">Código :</td>
-					<td align="right"><input type="text" name="codigo" id="codigo"></td>
+					<td align="right"><input type="text" name="codigo" id="codigo" required></td>
 				</tr>
 
 				<tr>
 					<td align="right">Nome :</td>
-					<td align="right"><input type="text" name="nome" id="nome"></td>
+					<td align="right"><input type="text" name="nome" id="nome" required></td>
 				</tr>
 
 				<tr>
 					<td align="right">Sobrenome :</td>
 					<td align="right"><input type="text" name="sobrenome"
-						id="sobrenome"></td>
+						id="sobrenome" required></td>
 				</tr>
 
 				<tr>

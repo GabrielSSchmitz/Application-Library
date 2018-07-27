@@ -24,7 +24,10 @@ public class LivroMI implements LivroDAO {
 	static public void devolucao(int codigo) {
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getCodigo() == codigo) {
-				list.get(i).setQuantidadeEmprestimo(list.get(i).getQuantidadeEmprestimo() + 1);
+				int quantidade = list.get(i).getQuantidadeEmprestimo();
+				quantidade ++;
+				
+				list.get(i).setQuantidadeEmprestimo(quantidade);
 			}
 		}
 	}

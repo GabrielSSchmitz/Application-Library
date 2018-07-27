@@ -47,6 +47,7 @@
 					<th align="left"><b> Nome </b></th>
 					<th align="left"><b> Item </b></th>
 					<th align="left"><b> Item código </b></th>
+					<th align="left"><b> Item tipo </b></th>
 					<th align="left"><b> Data </b></th>
 					<th align="left"><b> Situação emprestimo </b></th>
 
@@ -60,6 +61,7 @@
 						<td>${lista.pessoa.nome}</td>
 						<td>${lista.item.nome}</td>						
 						<td>${lista.item.codigo}</td>						
+						<td>${lista.item.tipo}</td>						
 						<td>${lista.data}</td>						
 						<td>${lista.emprestimo}</td>						
 					</tr>

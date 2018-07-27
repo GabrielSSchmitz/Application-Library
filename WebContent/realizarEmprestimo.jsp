@@ -66,7 +66,7 @@
 				</tr>
 
 				<tr>
-					<td align="right">Tipo de material:</td>
+					<td align="right" style="width: 200px;">Tipo de material:</td>
 
 					<td><select id="mySelect" onchange="opcoes()"
 						style="width: 100%;">
@@ -81,11 +81,17 @@
 				<tr>
 					<td><br></td>
 				</tr>
-				
+
 
 				<!-- ========================================================== -->
-		
-						<tr id="listaLivro" style="display: none">
+
+				<tr id="tipo" style="display: block">
+					<td><br></td>
+				</tr>
+
+				<tr id="listaLivro" style="display: none">
+					<c:choose>
+						<c:when test="${livro.size() > 0}">
 							<td>Livro:</td>
 							<td><select id="livro" name="livro">
 									<c:forEach items="${livro}" var="lista">
@@ -94,10 +100,17 @@
 										</c:if>
 									</c:forEach>
 							</select></td>
-						</tr>
-		
-		
-						<tr id="listaMaterial" style="display: none">
+						</c:when>
+						<c:otherwise>
+							<td> Nada cadastrado</td>
+						</c:otherwise>
+					</c:choose>
+
+				</tr>
+
+				<tr id="listaMaterial" style="display: none">
+					<c:choose>
+						<c:when test="${material.size() > 0}">
 							<td>Material:</td>
 							<td><select id="material" name="material">
 									<c:forEach items="${material}" var="lista">
@@ -106,9 +119,17 @@
 										</c:if>
 									</c:forEach>
 							</select></td>
-						</tr>
-		
-						<tr id="listaPeriodico" style="display: none">
+						</c:when>
+						<c:otherwise>
+							<td> Nada cadastrado</td>
+						</c:otherwise>
+					</c:choose>
+
+				</tr>
+
+				<tr id="listaPeriodico" style="display: none">
+					<c:choose>
+						<c:when test="${periodico.size() > 0}">
 							<td>Periodico:</td>
 							<td><select id="periodico" name="periodico">
 									<c:forEach items="${periodico}" var="lista">
@@ -117,7 +138,14 @@
 										</c:if>
 									</c:forEach>
 							</select></td>
-						</tr>
+						</c:when>
+						<c:otherwise>
+							<td> Nada cadastrado</td>
+						</c:otherwise>
+					</c:choose>
+
+				</tr>
+
 
 				<!-- ========================================================== -->
 
@@ -125,18 +153,19 @@
 				<tr>
 					<td><br></td>
 				</tr>
-				
+
 				<tr>
 					<td align="right">Data:</td>
 					<td><input type="text" name="data" id="data" readonly="true"></td>
 				</tr>
-				
+
 				<tr>
 					<td><br></td>
 				</tr>
-				
+
 				<tr>
-					<td colspan="2" align="right"><input type="submit"	class="list" value="Cadastrar"></td>
+					<td colspan="2" align="right"><input type="submit"
+						class="list" value="Cadastrar"></td>
 				</tr>
 
 			</table>
@@ -155,6 +184,7 @@
 				document.getElementById('listaLivro').style.display = 'none';
 				document.getElementById('listaPeriodico').style.display = 'none';
 				document.getElementById('listaMaterial').style.display = 'none';
+				document.getElementById('tipo').style.display = 'block';
 
 			}
 
@@ -162,20 +192,34 @@
 				document.getElementById('listaLivro').style.display = 'block';
 				document.getElementById('listaPeriodico').style.display = 'none';
 				document.getElementById('listaMaterial').style.display = 'none';
+				document.getElementById('tipo').style.display = 'none';
+
+
+				document.getElementById('periodico').value = '0';
+				document.getElementById('material').value = '0';
 
 			}
 			if (x == "periodico") {
 				document.getElementById('listaLivro').style.display = 'none';
 				document.getElementById('listaPeriodico').style.display = 'block';
 				document.getElementById('listaMaterial').style.display = 'none';
+				document.getElementById('tipo').style.display = 'none';
+
+				document.getElementById('livro').value = '0';
+				document.getElementById('material').value = '0';
 
 			}
 			if (x == "material") {
 				document.getElementById('listaLivro').style.display = 'none';
 				document.getElementById('listaPeriodico').style.display = 'none';
 				document.getElementById('listaMaterial').style.display = 'block';
+				document.getElementById('tipo').style.display = 'none';
+
+				document.getElementById('periodico').value = '0';
+				document.getElementById('livro').value = '0';
 
 			}
+
 		}
 	</script>
 	</ body>

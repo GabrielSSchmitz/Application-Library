@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import biblioteca.entidade.Emprestar;
 import biblioteca.entidade.Item;
-import biblioteca.entidade.Livro;
-import biblioteca.entidade.Material;
 import biblioteca.entidade.Periodico;
 import biblioteca.entidade.Pessoa;
 import bliblioteca.daoMI.EmprestarMI;
@@ -71,9 +69,9 @@ public class Emprestimo extends HttpServlet {
 //		----------------------------
 
 		if (acao.equals("emprestimo")) {
-			
+
 			Item item = null;
-			
+
 			String data = request.getParameter("data");
 			System.out.println(data);
 
@@ -95,7 +93,31 @@ public class Emprestimo extends HttpServlet {
 
 //			----------------------------
 
-			if (request.getParameter("livro") != null) {
+			String opcaoLivro = request.getParameter("livro");
+
+			if (opcaoLivro == null) {
+				opcaoLivro = "0";
+			}
+
+			String opcaoMaterial = request.getParameter("material");
+
+			if (opcaoMaterial == null) {
+				opcaoMaterial = "0";
+			}
+
+			String opcaoPeriodico = request.getParameter("periodico");
+
+			if (opcaoPeriodico == null) {
+				opcaoPeriodico = "0";
+			}
+
+			System.out.println(request.getParameter("livro"));
+			System.out.println(request.getParameter("material"));
+			System.out.println(request.getParameter("periodico"));
+
+//			----------------------------
+
+			if (!opcaoLivro.equals("0")) {
 				LivroMI livroMI = new LivroMI();
 				livroMI.setList(LivroMI.getConnection());
 
@@ -108,7 +130,7 @@ public class Emprestimo extends HttpServlet {
 
 //			----------------------------
 
-			if (request.getParameter("material") != null) {
+			if (!opcaoMaterial.equals("0")) {
 				MaterialMI materialMI = new MaterialMI();
 				materialMI.setList(MaterialMI.getConnection());
 
@@ -121,22 +143,20 @@ public class Emprestimo extends HttpServlet {
 
 //			----------------------------
 
-			if (request.getParameter("periodico") != null) {
+			if (!opcaoPeriodico.equals("0")) {
 				PeriodicoMI periodicoMI = new PeriodicoMI();
 				periodicoMI.setList(PeriodicoMI.getConnection());
 
 				int codigo = Integer.parseInt(request.getParameter("periodico"));
 
-				
-				Periodico periodico = periodicoMI.procuraPeriodicol(codigo);
-				item = periodico;
-		
-				PeriodicoMI.devolucao(codigo);
+				PeriodicoMI.emprestimo(codigo);
+
+				item = periodicoMI.procuraPeriodicol(codigo);
 			}
 
 //			----------------------------
 
-			Emprestar emprestar = new Emprestar(codigoId, item, data, pessoa);
+			Emprestar emprestar = new Emprestar(item, pessoa, codigoId, data, true);
 			EmprestarMI.getConnection().add(emprestar);
 
 //			----------------------------

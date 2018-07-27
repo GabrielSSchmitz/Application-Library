@@ -42,33 +42,33 @@ public class Main extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		Material material = new Material(0, 2, "sdasd", "fsdfsd", "dsf", 2);
-		Material material2 = new Material(1, 2, "ssaddd", "fsdfsd", "dsf", 2);
+		Material material = new Material(1001, 2, "Teste", "Teste", "Teste", 2);
+		Material material2 = new Material(1002, 2, "Teste2", "Teste2", "Teste2", 2);
 		MaterialMI.getConnection().add(material);
 		MaterialMI.getConnection().add(material2);
 		
-		Periodico periodico = new Periodico(0, 3, "sdssdfsd", 2, 5);
-		Periodico periodico2 = new Periodico(1, 1, "jhjkhkhjkh", 2, 5);
+		Periodico periodico = new Periodico(2020, 3, "sdssdfsd", 2, 5);
+		Periodico periodico2 = new Periodico(2021, 3, "jhjkhkhjkh", 2, 5);
 		PeriodicoMI.getConnection().add(periodico);
 		PeriodicoMI.getConnection().add(periodico2);
 		
-		Editora editora = new Editora(0, "dsfsd", true);
-		Editora editora2 = new Editora(1, "ytryr", false);
-		EditoraMI.getConnection().add(editora);
-		EditoraMI.getConnection().add(editora2);
+//		Editora editora = new Editora(0, "dsfsd", true);
+//		Editora editora2 = new Editora(1, "ytryr", false);
+//		EditoraMI.getConnection().add(editora);
+//		EditoraMI.getConnection().add(editora2);
+//		
+//		Autor autor = new Autor(0, "dfsf", "fsdfsdf");
+//		Autor autor2 = new Autor(1, "dasdas", "fsdfsdf");
+//		AutorMI.getConnection().add(autor);
+//		AutorMI.getConnection().add(autor2);
+//
+//		Livro livro = new Livro(0, 1, "dfsdf", "533", 2, 1, editora2, autor2, 2);
+//		Livro livro2 = new Livro(1, 1, "d432f", "789", 2, 1, editora2, autor2, 2);
+//		LivroMI.getConnection().add(livro);
+//		LivroMI.getConnection().add(livro2);
 		
-		Autor autor = new Autor(0, "dfsf", "fsdfsdf");
-		Autor autor2 = new Autor(1, "dasdas", "fsdfsdf");
-		AutorMI.getConnection().add(autor);
-		AutorMI.getConnection().add(autor2);
-
-		Livro livro = new Livro(0, 1, "dfsdf", "533", 2, 1, editora2, autor2, 2);
-		Livro livro2 = new Livro(1, 1, "d432f", "789", 2, 1, editora2, autor2, 2);
-		LivroMI.getConnection().add(livro);
-		LivroMI.getConnection().add(livro2);
-		
-		Pessoa pessoa = new Pessoa("Gabriel", "42343", "123");
-		Pessoa pessoa2 = new Pessoa("Teste", "wewqewq", "1");
+		Pessoa pessoa = new Pessoa("Teste", "Teste", "123");
+		Pessoa pessoa2 = new Pessoa("Teste2", "Teste2", "321");
 		PessoaMI.getConnection().add(pessoa);
 		PessoaMI.getConnection().add(pessoa2);
 		

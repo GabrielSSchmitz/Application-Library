@@ -2,7 +2,6 @@ package biblioteca.entidade;
 
 public class Emprestar {
 	private Item item;
-	private Periodico periodico;
 	private Pessoa pessoa;
 	private int codigo;
 	private String data;
@@ -10,15 +9,14 @@ public class Emprestar {
 
 //	----------------------------
 
-	public Emprestar(int codigo, Item item, String data, Pessoa pessoa) {
-		super();
-		this.codigo = codigo;
-		this.data = data;
-		this.emprestimo = true;
-		this.pessoa = pessoa;
-	}
-
-//	----------------------------
+	public Emprestar(Item item, Pessoa pessoa, int codigo, String data, boolean emprestimo) {
+	super();
+	this.item = item;
+	this.pessoa = pessoa;
+	this.codigo = codigo;
+	this.data = data;
+	this.emprestimo = emprestimo;
+}
 
 //	----------------------------
 
@@ -46,13 +44,6 @@ public class Emprestar {
 		this.emprestimo = emprestimo;
 	}
 
-	public Periodico getPeriodico() {
-		return periodico;
-	}
-
-	public void setPeriodico(Periodico periodico) {
-		this.periodico = periodico;
-	}
 
 	public int getCodigo() {
 		return codigo;

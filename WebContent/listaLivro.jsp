@@ -42,13 +42,15 @@
 			<table class="lista">
 				<tr class="lista">
 
-					<th align="left"><b> Identificador </b></th>
-					<th align="left"><b> Titulo </b></th>
-					<th align="left"><b> Data </b></th>
-					<th align="left"><b> Edição </b></th>
-					<th align="left"><b> Volume </b></th>
-					<th align="left"><b> Editora </b></th>
-					<th align="left"><b> Autor </b></th>
+					<th align="center"><b> Identificador </b></th>
+					<th align="center"><b> Titulo </b></th>
+					<th align="center"><b> Data </b></th>
+					<th align="center"><b> Edição </b></th>
+					<th align="center"><b> Volume </b></th>
+					<th align="center"><b> Editora </b></th>
+					<th align="center"><b> Autor </b></th>
+					<th align="center"><b> Quantidade </b></th>
+					<th align="center"><b> Quantidade disponivel </b></th>
 
 				</tr>
 
@@ -62,6 +64,8 @@
 						<td>${lista.volume}</td>
 						<td>${lista.editora.nome}</td>
 						<td>${lista.autor.nome}</td>
+						<td>${lista.quantidade}</td>
+						<td>${lista.quantidadeEmprestimo}</td>
 					</tr>
 
 				</c:forEach>

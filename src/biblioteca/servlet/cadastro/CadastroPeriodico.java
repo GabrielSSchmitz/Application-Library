@@ -45,7 +45,7 @@ public class CadastroPeriodico extends HttpServlet {
 		int codigo;
 		
 		if (size == 0) {
-			codigo = 0;
+			codigo = 10100;
 		} else {
 			codigo = PeriodicoMI.getConnection().get(size-1).getCodigo();
 			codigo++;

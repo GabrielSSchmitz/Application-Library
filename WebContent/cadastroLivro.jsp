@@ -45,25 +45,25 @@
 			<table>
 				<tr>
 					<td align="right">Identificador (ISBN) :</td>
-					<td align="right"><input type="text" id="identificador" name="identificador" style="width: 100%"></td>
+					<td align="right"><input type="text" id="identificador" name="identificador" style="width: 100%" required></td>
 				</tr>
 				<tr>
 					<td align="right">Titulo :</td>
-					<td align="right"><input type="text" id="titulo" name="titulo" style="width: 100%"></td>
+					<td align="right"><input type="text" id="titulo" name="titulo" style="width: 100%" required></td>
 				</tr>
 				<tr>
 					<td align="right">Ano :</td>
-					<td align="right"><input type="text" id="ano" name="ano" style="width: 100%"></td>
+					<td align="right"><input type="text" id="ano" name="ano" style="width: 100%" required></td>
 				</tr>
 				<tr>
 					<td align="right">Edição :</td>
 					<td align="left"><input type="number" id="edicao"
-						name="edicao" min="1" max="99" style="width: 100%;" style="width: 100%"></td>
+						name="edicao" min="1" max="99" style="width: 100%;" style="width: 100%" required></td>
 				</tr>
 				<tr>
 					<td align="right">Volume :</td>
 					<td align="left"><input type="number" id="volume"
-						name="volume" min="1" max="99" style="width: 100%;" style="width: 100%"></td>
+						name="volume" min="1" max="99" style="width: 100%;" style="width: 100%" required></td>
 				</tr>
 				<tr>
 					<td align="right">Editora :</td>
@@ -85,7 +85,7 @@
 				</tr>
 				<tr>
 					<td align="right">Quantidade :</td>
-					<td align="left"><input type="number" id ="quantidade" name="quantidade" min="1" max="99" style="width: 100%;" style="width: 100%"></td>
+					<td align="left"><input type="number" id ="quantidade" name="quantidade" min="1" max="99" style="width: 100%;" style="width: 100%" required></td>
 				</tr>
 				<tr>
 					<td><br></td>

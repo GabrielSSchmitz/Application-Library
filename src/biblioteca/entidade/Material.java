@@ -1,6 +1,6 @@
 package biblioteca.entidade;
 
-public class Material implements Item {
+public class Material extends Item {
 	private int codigo = 0;
 	private int tipo = 0;
 	private String nome = "";

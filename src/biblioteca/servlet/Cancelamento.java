@@ -14,14 +14,11 @@ import bliblioteca.daoMI.LivroMI;
 import bliblioteca.daoMI.MaterialMI;
 import bliblioteca.daoMI.PeriodicoMI;
 
-/**
- * Servlet implementation class Devolucao
- */
-@WebServlet("/Devolucao")
-public class Devolucao extends HttpServlet {
+@WebServlet("/Cancelamento")
+public class Cancelamento extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public Devolucao() {
+	public Cancelamento() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -31,6 +28,7 @@ public class Devolucao extends HttpServlet {
 		doPost(request, response);
 	}
 
+	@SuppressWarnings("static-access")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -38,20 +36,14 @@ public class Devolucao extends HttpServlet {
 		emprestarMI.setList(EmprestarMI.getConnection());
 
 		String cpf = request.getParameter("cpf");
-		
-		System.out.println(cpf);
-		
+
 		String codigoString = request.getParameter("codigo");
 		int codigo = Integer.parseInt(codigoString);
 
 		for (int i = 0; i < emprestarMI.getList().size(); i++) {
-			
 			if (emprestarMI.getList().get(i).getPessoa().getCpf().equals(cpf)) {
-				
-				
 				for (int j = 0; j < emprestarMI.getList().size(); j++) {
-					if (emprestarMI.getList().get(i).getItem().getCodigo() == codigo
-							&& emprestarMI.getList().get(i).isEmprestimo() == true) {
+					if (emprestarMI.getList().get(i).getItem().getCodigo() == codigo && emprestarMI.getList().get(i).isEmprestimo() == true) {
 
 						System.out.println("Tipo: " + emprestarMI.getList().get(i).getItem().getTipo());
 
@@ -64,16 +56,20 @@ public class Devolucao extends HttpServlet {
 						if (emprestarMI.getList().get(i).getItem().getTipo() == 3) {
 							PeriodicoMI.devolucao(codigo);
 						}
-						EmprestarMI.getConnection().get(i).setEmprestimo(false);
+						for (int j2 = 0; j2 < EmprestarMI.getConnection().size(); j2++) {
+							if (emprestarMI.getList().get(i) == EmprestarMI.getConnection().get(j2)) {
+								EmprestarMI.getConnection().remove(j2);
+							}
+						}
 						break;
 					}
 				}
 
 			}
-
-			RequestDispatcher rd = request.getRequestDispatcher("ListaEmprestimo");
-			rd.forward(request, response);
 		}
 
+		RequestDispatcher rd = request.getRequestDispatcher("ListaEmprestimo");
+		rd.forward(request, response);
 	}
+
 }
