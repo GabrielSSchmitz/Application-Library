@@ -37,7 +37,7 @@
 
 		<h1>Emprestimo</h1>
 
-		<form method="post" action="Emprestimo">
+		<form method="post" id="forme" action="Emprestimo">
 
 			<input type="hidden" name="acao" id="acao" value="emprestimo">
 
@@ -92,6 +92,7 @@
 				<tr id="listaLivro" style="display: none">
 					<c:choose>
 						<c:when test="${livro.size() > 0}">
+							<input type="hidden" id="idLivro" value="ll">
 							<td>Livro:</td>
 							<td><select id="livro" name="livro">
 									<c:forEach items="${livro}" var="lista">
@@ -102,7 +103,7 @@
 							</select></td>
 						</c:when>
 						<c:otherwise>
-							<td> Nada cadastrado</td>
+							<td><input type="text" id="idLivro" value="Nada cadastrado" readonly="true"></td>
 						</c:otherwise>
 					</c:choose>
 
@@ -111,6 +112,7 @@
 				<tr id="listaMaterial" style="display: none">
 					<c:choose>
 						<c:when test="${material.size() > 0}">
+							<input type="hidden" id="idMateial" value="ll">
 							<td>Material:</td>
 							<td><select id="material" name="material">
 									<c:forEach items="${material}" var="lista">
@@ -121,7 +123,7 @@
 							</select></td>
 						</c:when>
 						<c:otherwise>
-							<td> Nada cadastrado</td>
+							<td><input type="text" id="idMateial" value="Nada cadastrado" readonly="true"></td>
 						</c:otherwise>
 					</c:choose>
 
@@ -130,6 +132,7 @@
 				<tr id="listaPeriodico" style="display: none">
 					<c:choose>
 						<c:when test="${periodico.size() > 0}">
+							<input type="hidden" id="idPeriodico" value="ll">
 							<td>Periodico:</td>
 							<td><select id="periodico" name="periodico">
 									<c:forEach items="${periodico}" var="lista">
@@ -140,7 +143,7 @@
 							</select></td>
 						</c:when>
 						<c:otherwise>
-							<td> Nada cadastrado</td>
+							<td><input type="text" id="idPeriodico" value="Nada cadastrado" readonly="true"></td>
 						</c:otherwise>
 					</c:choose>
 
@@ -164,8 +167,8 @@
 				</tr>
 
 				<tr>
-					<td colspan="2" align="right"><input type="submit"
-						class="list" value="Cadastrar"></td>
+					<td colspan="2" align="right"><input type="button"
+						class="list" value="Cadastrar" onclick="verifica()"></td>
 				</tr>
 
 			</table>
@@ -176,6 +179,39 @@
 	<script type="text/javascript">
 		var d = new Date();
 		document.getElementById("data").value = d.toDateString();
+
+		function verifica() {
+
+			var x = document.getElementById("mySelect").value;
+
+			if (x == "livro") {
+				if (document.getElementById('idLivro').value == 'Nada cadastrado'
+						&& document.getElementById('listaLivro').style.display == 'block') {
+					alert('Cadastre um livro');
+				} else {
+					document.getElementById("forme").submit();
+				}
+			}
+
+			if (x == "periodico") {
+				if (document.getElementById('idPeriodico').value == 'Nada cadastrado'
+						&& document.getElementById('listaPeriodico').style.display == 'block') {
+					alert('Cadastre um periodico');
+				} else {
+					document.getElementById("forme").submit();
+				}
+			}
+
+			if (x == "material") {
+				if (document.getElementById('idMateial').value == 'Nada cadastrado'
+						&& document.getElementById('listaMaterial').style.display == 'block') {
+					alert('Cadastre um material');
+				} else {
+					document.getElementById("forme").submit();
+				}
+			}
+
+		}
 
 		function opcoes() {
 			var x = document.getElementById("mySelect").value;
@@ -193,7 +229,6 @@
 				document.getElementById('listaPeriodico').style.display = 'none';
 				document.getElementById('listaMaterial').style.display = 'none';
 				document.getElementById('tipo').style.display = 'none';
-
 
 				document.getElementById('periodico').value = '0';
 				document.getElementById('material').value = '0';
@@ -219,8 +254,8 @@
 				document.getElementById('livro').value = '0';
 
 			}
-
 		}
 	</script>
-	</ body>
+	
+	</body>
 </html>
