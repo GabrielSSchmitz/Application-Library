@@ -6,6 +6,6 @@ public interface PeriodicoDAO {
 	
 	void salvaPeriodico(Periodico periodico);
 	
-	Periodico procuraPeriodicol (int codigo); 
+	Periodico procuraPeriodicol (String codigo); 
 	
 }

@@ -35,7 +35,7 @@
 
 	<article>
 
-		<h1>Devolução</h1>
+		<h1>Cancelamento</h1>
 
 		<form method="post" action="Cancelamento">
 			<table>

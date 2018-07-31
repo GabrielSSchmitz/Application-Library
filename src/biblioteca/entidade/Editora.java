@@ -1,21 +1,21 @@
 package biblioteca.entidade;
 
 public class Editora {
-	private int codigo;
+	private String codigo;
 	private String nome;
 	private boolean nacional;
 
-	public Editora(int codigo, String nome, boolean nacional) {
+	public Editora(String codigo, String nome, boolean nacional) {
 		this.codigo = codigo;
 		this.nome = nome;
 		this.nacional = nacional;
 	}
 
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 

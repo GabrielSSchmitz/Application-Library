@@ -1,7 +1,7 @@
 package biblioteca.entidade;
 
 public class Material extends Item {
-	private int codigo = 0;
+	private String codigo;
 	private int tipo = 0;
 	private String nome = "";
 	
@@ -9,13 +9,14 @@ public class Material extends Item {
 	
 	private String descricao;
 	private String material;
+	private String estante;
 	private int quantidade;
 	private int quantidadeEmprestimo;
 	
 	
 //	----------------------------
 	
-	public Material(int codigo, int tipo, String nome, String descricao, String material, int quantidade) {
+	public Material(String codigo, int tipo, String nome, String descricao, String material, int quantidade, String estante) {
 		super();
 		this.codigo = codigo;
 		this.tipo = tipo;
@@ -24,6 +25,7 @@ public class Material extends Item {
 		this.material = material;
 		this.quantidade = quantidade;
 		this.quantidadeEmprestimo = quantidade;
+		this.estante = estante;
 	}
 
 //	----------------------------
@@ -32,11 +34,19 @@ public class Material extends Item {
 		return descricao;
 	}
 
-	public int getCodigo() {
+	public String getEstante() {
+		return estante;
+	}
+
+	public void setEstante(String estante) {
+		this.estante = estante;
+	}
+
+	public String getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 

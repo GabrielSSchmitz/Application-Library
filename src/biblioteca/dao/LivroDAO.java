@@ -6,5 +6,5 @@ public interface LivroDAO {
 	
 	void salvaLivro (Livro livro);
 	
-	Livro procuraLivro(int codigo);
+	Livro procuraLivro(String codigo);
 }

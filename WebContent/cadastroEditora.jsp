@@ -18,20 +18,17 @@
 	<hr>
 
 	<nav>
-			<a href="index.jsp"><button>Index</button></a>
-			<a href="lista.jsp"><button>Lista</button></a>
-			<a href="cadastro.jsp"><button>Cadastro</button></a>
-			<div class="dropdown">
-			
-				<a href="emprestimo.jsp"><button class="dropdown">Emprestimo</button></a>
-				
-				<div class="dropdown-content">
-				
-					<a href="cancelamento.jsp"><button>Cancelamento</button></a> 
-					<a href="devolucao.jsp"><button>Devolução</button></a>
-					
-				</div>
+		<a href="index.jsp"><button>Index</button></a> <a href="lista.jsp"><button>Lista</button></a> <a href="cadastro.jsp"><button>Cadastro</button></a>
+		<div class="dropdown">
+
+			<a href="emprestimo.jsp"><button class="dropdown">Emprestimo</button></a>
+
+			<div class="dropdown-content">
+
+				<a href="cancelamento.jsp"><button>Cancelamento</button></a> <a href="devolucao.jsp"><button>Devolução</button></a>
+
 			</div>
+		</div>
 	</nav>
 
 	<article>
@@ -43,14 +40,18 @@
 			<table>
 
 				<tr>
+					<td align="right">Identificador (ISBN) :</td>
+					<td align="right"><input type="text" id="identificador" name="identificador" style="width: 100%" required></td>
+				</tr>
+
+				<tr>
 					<td align="right">Nome :</td>
-					<td align="right"><input type="text" name="nome" id="nome" required></td>
+					<td align="right"><input type="text" name="nome" id="nome" style="width: 100%" required></td>
 				</tr>
 
 				<tr>
 					<td align="right">Nacional :</td>
-					<td align="left"><input type="checkbox" name="nacional"
-						id="nacional" required></td>
+					<td align="left"><input type="checkbox" name="nacional" id="nacional" required></td>
 				</tr>
 
 				<tr>

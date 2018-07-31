@@ -13,7 +13,7 @@ public class LivroMI implements LivroDAO {
 		return list;
 	}
 
-	static public void emprestimo(int codigo) {
+	static public void emprestimo(String codigo) {
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getCodigo() == codigo) {
 				list.get(i).setQuantidadeEmprestimo(list.get(i).getQuantidadeEmprestimo() - 1);
@@ -21,7 +21,7 @@ public class LivroMI implements LivroDAO {
 		}
 	}
 	
-	static public void devolucao(int codigo) {
+	static public void devolucao(String codigo) {
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getCodigo() == codigo) {
 				int quantidade = list.get(i).getQuantidadeEmprestimo();
@@ -39,7 +39,7 @@ public class LivroMI implements LivroDAO {
 	}
 
 	@Override
-	public Livro procuraLivro(int codigo) {
+	public Livro procuraLivro(String codigo) {
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getCodigo() == codigo) {
 				return list.get(i);

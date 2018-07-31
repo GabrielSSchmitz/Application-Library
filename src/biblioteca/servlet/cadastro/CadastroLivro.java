@@ -66,8 +66,7 @@ public class CadastroLivro extends HttpServlet {
 
 //			----------------------------
 
-			String editoraString = request.getParameter("editora");
-			int editoraCodigo = Integer.parseInt(editoraString);
+			String editoraCodigo = request.getParameter("editora");
 			
 			EditoraMI editoraMI = new EditoraMI();	
 			editoraMI.setList(EditoraMI.getConnection());
@@ -86,9 +85,9 @@ public class CadastroLivro extends HttpServlet {
 			
 //			----------------------------
 
-			Livro livro = new Livro(codigo, 1, nome, ano, edicao, volume, editora, autor, quantidade);
+		//	Livro livro = new Livro(codigo, 1, nome, ano, edicao, volume, editora, autor, quantidade);
 			
-			LivroMI.getConnection().add(livro);
+		//	LivroMI.getConnection().add(livro);
 
 //			----------------------------
 

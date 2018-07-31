@@ -42,15 +42,6 @@ public class Main extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		Material material = new Material(1001, 2, "Teste", "Teste", "Teste", 2);
-		Material material2 = new Material(1002, 2, "Teste2", "Teste2", "Teste2", 2);
-		MaterialMI.getConnection().add(material);
-		MaterialMI.getConnection().add(material2);
-		
-		Periodico periodico = new Periodico(2020, 3, "sdssdfsd", 2, 5);
-		Periodico periodico2 = new Periodico(2021, 3, "jhjkhkhjkh", 2, 5);
-		PeriodicoMI.getConnection().add(periodico);
-		PeriodicoMI.getConnection().add(periodico2);
 		
 //		Editora editora = new Editora(0, "dsfsd", true);
 //		Editora editora2 = new Editora(1, "ytryr", false);

@@ -15,7 +15,7 @@ public class MaterialMI implements MaterialDAO {
 
 	}
 
-	static public void emprestimo(int codigo) {
+	static public void emprestimo(String codigo) {
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getCodigo() == codigo) {
 				list.get(i).setQuantidadeEmprestimo(list.get(i).getQuantidadeEmprestimo() - 1);
@@ -23,7 +23,7 @@ public class MaterialMI implements MaterialDAO {
 		}
 	}
 	
-	static public void devolucao(int codigo) {
+	static public void devolucao(String codigo) {
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getCodigo() == codigo) {
 				list.get(i).setQuantidadeEmprestimo(list.get(i).getQuantidadeEmprestimo() + 1);
@@ -36,7 +36,7 @@ public class MaterialMI implements MaterialDAO {
 	}
 
 	@Override
-	public Material procuraMaterial(int codigo) {
+	public Material procuraMaterial(String codigo) {
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getCodigo() == codigo) {
 				return list.get(i);

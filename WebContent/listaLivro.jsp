@@ -3,6 +3,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" type="text/css" href="estilo.css">
 <script type="text/javascript" src="JavaScript.js"></script>
@@ -18,23 +20,20 @@
 	<hr>
 
 	<nav>
-			<a href="index.jsp"><button>Index</button></a>
-			<a href="lista.jsp"><button>Lista</button></a>
-			<a href="cadastro.jsp"><button>Cadastro</button></a>
-			<div class="dropdown">
-			
-				<a href="emprestimo.jsp"><button class="dropdown">Emprestimo</button></a>
-				
-				<div class="dropdown-content">
-				
-					<a href="cancelamento.jsp"><button>Cancelamento</button></a> 
-					<a href="devolucao.jsp"><button>Devolução</button></a>
-					
-				</div>
+		<a href="index.jsp"><button>Index</button></a> <a href="lista.jsp"><button>Lista</button></a> <a href="cadastro.jsp"><button>Cadastro</button></a>
+		<div class="dropdown">
+
+			<a href="emprestimo.jsp"><button class="dropdown">Emprestimo</button></a>
+
+			<div class="dropdown-content">
+
+				<a href="cancelamento.jsp"><button>Cancelamento</button></a> <a href="devolucao.jsp"><button>Devolução</button></a>
+
 			</div>
+		</div>
 	</nav>
 
-	<article>
+	<article class="abaLista">
 
 		<h1>Lista livro</h1>
 
@@ -71,7 +70,7 @@
 				</c:forEach>
 
 			</table>
-			</br> <a href="lista.jsp" class="list"> Voltar </a>
+			<br> <a href="lista.jsp" class="list"> Voltar </a>
 		</form>
 
 	</article>

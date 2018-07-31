@@ -19,7 +19,7 @@ public class EditoraMI implements EditoraDAO {
 	}
 
 	@Override
-	public Editora procuraEditora(int codigo) {
+	public Editora procuraEditora(String codigo) {
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getCodigo() == codigo) {
 				return list.get(i);

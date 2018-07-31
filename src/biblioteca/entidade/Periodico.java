@@ -2,7 +2,7 @@ package biblioteca.entidade;
 
 public class Periodico extends Item {
 
-	private int codigo = 0;
+	private String codigo;
 	private int tipo = 0;
 	private String nome = "";
 
@@ -14,7 +14,7 @@ public class Periodico extends Item {
 
 //	----------------------------
 
-	public Periodico(int codigo, int tipo, String nome, int volume, int quantidade) {
+	public Periodico(String codigo, int tipo, String nome, int volume, int quantidade) {
 		super();
 		this.codigo = codigo;
 		this.tipo = tipo;
@@ -25,11 +25,11 @@ public class Periodico extends Item {
 	}
 
 //	----------------------------
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 

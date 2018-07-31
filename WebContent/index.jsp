@@ -19,7 +19,6 @@
 
 	<nav>
 			<a href="index.jsp"><button>Index</button></a>
-			<a href="Main"><button>Indexxx</button></a>
 			<a href="lista.jsp"><button>Lista</button></a>
 			<a href="cadastro.jsp"><button>Cadastro</button></a>
 			<div class="dropdown">

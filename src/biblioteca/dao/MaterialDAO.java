@@ -6,6 +6,6 @@ public interface MaterialDAO {
 	
 	void salvaMaterial(Material material);
 	
-	Material procuraMaterial (int codigo); 
+	Material procuraMaterial (String codigo); 
 	
 }

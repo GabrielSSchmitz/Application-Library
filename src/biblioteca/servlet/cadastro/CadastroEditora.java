@@ -30,6 +30,7 @@ public class CadastroEditora extends HttpServlet {
 			throws ServletException, IOException {
 
 		boolean nacional = false;
+		String identificador = request.getParameter("identificador");
 
 		String nome = request.getParameter("nome");
 
@@ -41,18 +42,7 @@ public class CadastroEditora extends HttpServlet {
 
 //		----------------------------
 
-		int size = EditoraMI.getConnection().size();
-		int codigo;
-		if (size == 0) {
-			codigo = 0;
-		} else {
-			codigo = EditoraMI.getConnection().get(size - 1).getCodigo();
-			codigo++;
-		}
-
-//		----------------------------
-
-		Editora editora = new Editora(codigo, nome, nacional);
+		Editora editora = new Editora(identificador, nome, nacional);
 
 		EditoraMI.getConnection().add(editora);
 

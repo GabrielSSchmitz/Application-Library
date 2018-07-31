@@ -15,7 +15,7 @@ public class PeriodicoMI implements PeriodicoDAO {
 		return list;
 	}
 	
-	static public void emprestimo(int codigo) {
+	static public void emprestimo(String codigo) {
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getCodigo() == codigo) {
 				list.get(i).setQuantidadeEmprestimo(list.get(i).getQuantidadeEmprestimo() - 1);
@@ -23,7 +23,7 @@ public class PeriodicoMI implements PeriodicoDAO {
 		}
 	}
 	
-	static public void devolucao(int codigo) {
+	static public void devolucao(String codigo) {
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getCodigo() == codigo) {
 				list.get(i).setQuantidadeEmprestimo(list.get(i).getQuantidadeEmprestimo() + 1);
@@ -39,7 +39,7 @@ public class PeriodicoMI implements PeriodicoDAO {
 	}
 
 	@Override
-	public Periodico procuraPeriodicol(int codigo) {
+	public Periodico procuraPeriodicol(String codigo) {
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getCodigo() == codigo) {
 				return list.get(i);

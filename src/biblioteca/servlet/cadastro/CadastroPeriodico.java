@@ -41,19 +41,19 @@ public class CadastroPeriodico extends HttpServlet {
 //		----------------------------
 
 		int size = PeriodicoMI.getConnection().size();
-		
+
 		int codigo;
-		
+
 		if (size == 0) {
 			codigo = 10100;
 		} else {
-			codigo = PeriodicoMI.getConnection().get(size-1).getCodigo();
+			codigo = Integer.parseInt(PeriodicoMI.getConnection().get(size - 1).getCodigo());
 			codigo++;
 		}
 
 //		----------------------------
 
-		Periodico periodico = new Periodico(codigo, 3, nome, volume, quantidade);
+		Periodico periodico = new Periodico("" + codigo, 3, nome, volume, quantidade);
 
 		PeriodicoMI.getConnection().add(periodico);
 

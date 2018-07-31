@@ -1,7 +1,9 @@
 package biblioteca.entidade;
 
+import java.util.ArrayList;
+
 public class Livro extends Item {
-	private int codigo = 0;
+	private String codigo;
 	private int tipo = 0;
 	private String nome = "";
 
@@ -11,13 +13,13 @@ public class Livro extends Item {
 	private int edicao;
 	private int volume;
 	private Editora editora;
-	private Autor autor;
+	private ArrayList<Autor> autores;
 	private int quantidade;
 	private int quantidadeEmprestimo;
 
 //	----------------------------
 
-	public Livro(int codigo, int tipo, String nome, String data, int edicao, int volume, Editora editora, Autor autor,
+	public Livro(String codigo, int tipo, String nome, String data, int edicao, int volume, Editora editora,
 			int quantidade) {
 		super();
 		this.codigo = codigo;
@@ -27,9 +29,14 @@ public class Livro extends Item {
 		this.edicao = edicao;
 		this.volume = volume;
 		this.editora = editora;
-		this.autor = autor;
 		this.quantidade = quantidade;
 		this.quantidadeEmprestimo = quantidade;
+	}
+
+//	----------------------------
+
+	public void adicionaAutor(Autor autor) {
+		autores.add(autor);
 	}
 
 //	----------------------------
@@ -42,7 +49,7 @@ public class Livro extends Item {
 		this.quantidadeEmprestimo = quantidadeEmprestimo;
 	}
 
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 
@@ -78,14 +85,6 @@ public class Livro extends Item {
 		this.editora = editora;
 	}
 
-	public Autor getAutor() {
-		return autor;
-	}
-
-	public void setAutor(Autor autor) {
-		this.autor = autor;
-	}
-
 	public int getQuantidade() {
 		return quantidade;
 	}
@@ -94,7 +93,7 @@ public class Livro extends Item {
 		this.quantidade = quantidade;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 

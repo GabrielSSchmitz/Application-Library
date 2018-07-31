@@ -28,29 +28,17 @@ public class CadastroMaterial extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+		String identificador = request.getParameter("identificador");
 		String nome = request.getParameter("nome");
 		String descricao = request.getParameter("descricao");
 		String tipo = request.getParameter("tipo");
 		String quantidadeString = request.getParameter("quantidade");
+		String estante = request.getParameter("estante");
 
 		int quantidade = Integer.parseInt(quantidadeString);
 
-//		----------------------------
 
-		int size = MaterialMI.getConnection().size();
-
-		int codigo;
-		if (size == 0) {
-			codigo = 2020;
-		} else {
-			codigo = MaterialMI.getConnection().get(size - 1).getCodigo();
-			codigo++;
-		}
-
-//		----------------------------
-
-		Material material = new Material(codigo, 2, nome, descricao, tipo, quantidade);
+		Material material = new Material(identificador, 2, nome, descricao, tipo, quantidade,estante);
 
 		MaterialMI.getConnection().add(material);
 

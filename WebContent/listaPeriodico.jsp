@@ -33,7 +33,8 @@
 		</div>
 	</nav>
 
-	<article>
+
+	<article class="abaLista">
 
 		<h1>Lista periodicos</h1>
 		<form method="get" action="listaMaterial">

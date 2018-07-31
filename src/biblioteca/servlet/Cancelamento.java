@@ -37,8 +37,7 @@ public class Cancelamento extends HttpServlet {
 
 		String cpf = request.getParameter("cpf");
 
-		String codigoString = request.getParameter("codigo");
-		int codigo = Integer.parseInt(codigoString);
+		String codigo = request.getParameter("codigo");
 
 		for (int i = 0; i < emprestarMI.getList().size(); i++) {
 			if (emprestarMI.getList().get(i).getPessoa().getCpf().equals(cpf)) {

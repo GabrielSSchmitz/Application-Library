@@ -40,7 +40,11 @@
 	
 		<form method="post" action="CadastroMaterial">
 			<table>
-
+				<tr>
+					<td align="right">Código de barra:</td>
+					<td align="right"><input type="text" id="identificador" name="identificador" style="width: 100%" required></td>
+				</tr>
+				
 				<tr>
 					<td align="right">Nome :</td>
 					<td align="right">
@@ -58,7 +62,7 @@
 				<tr>
 					<td align="right">Tipo :</td>
 					<td align="right">
-					<select name="tipo" style="width: 109%;">
+					<select name="tipo" style="width: 103%;">
 							<option>DVD</option>
 							<option>CD</option>
 							<option>FITA</option>
@@ -68,7 +72,10 @@
 					<td align="right">Quantidade :</td>
 					<td align="left"><input type="number" name="quantidade" min="1" max="99" style="width: 100%;"></td>
 				</tr>
-
+				<tr>
+					<td align="right">Estante :</td>
+					<td align="left"><input type="text" name="estante" style="width: 100%;"></td>
+				</tr>
 				<tr>
 					<td><br></td>
 				</tr>

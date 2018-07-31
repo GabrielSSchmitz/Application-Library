@@ -34,7 +34,8 @@
 			</div>
 	</nav>
 
-	<article>
+
+	<article class="abaLista">
 
 		<h1>Lista pessoa</h1>
 

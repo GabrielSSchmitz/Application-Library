@@ -31,6 +31,7 @@ public class Devolucao extends HttpServlet {
 		doPost(request, response);
 	}
 
+	@SuppressWarnings("static-access")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -41,8 +42,7 @@ public class Devolucao extends HttpServlet {
 		
 		System.out.println(cpf);
 		
-		String codigoString = request.getParameter("codigo");
-		int codigo = Integer.parseInt(codigoString);
+		String codigo = request.getParameter("codigo");
 
 		for (int i = 0; i < emprestarMI.getList().size(); i++) {
 			

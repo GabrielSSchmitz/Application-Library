@@ -121,7 +121,7 @@ public class Emprestimo extends HttpServlet {
 				LivroMI livroMI = new LivroMI();
 				livroMI.setList(LivroMI.getConnection());
 
-				int codigo = Integer.parseInt(request.getParameter("livro"));
+				String codigo = request.getParameter("livro");
 
 				LivroMI.emprestimo(codigo);
 
@@ -134,7 +134,7 @@ public class Emprestimo extends HttpServlet {
 				MaterialMI materialMI = new MaterialMI();
 				materialMI.setList(MaterialMI.getConnection());
 
-				int codigo = Integer.parseInt(request.getParameter("material"));
+				String codigo = request.getParameter("material");
 
 				MaterialMI.emprestimo(codigo);
 
@@ -147,7 +147,7 @@ public class Emprestimo extends HttpServlet {
 				PeriodicoMI periodicoMI = new PeriodicoMI();
 				periodicoMI.setList(PeriodicoMI.getConnection());
 
-				int codigo = Integer.parseInt(request.getParameter("periodico"));
+				String codigo = request.getParameter("periodico");
 
 				PeriodicoMI.emprestimo(codigo);
 

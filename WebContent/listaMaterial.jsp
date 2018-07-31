@@ -34,7 +34,8 @@
 			</div>
 	</nav>
 
-	<article>
+
+	<article class="abaLista">
 
 		<h1>Lista material</h1>
 		<form method="get" action="listaMaterial">
@@ -47,6 +48,7 @@
 					<th align="center"><b> Tipo </b></th>
 					<th align="center"><b> Quantidade </b></th>
 					<th align="center"><b> Quantidade disponivel</b></th>
+					<th align="center"><b> Estante</b></th>
 
 				</tr>
 
@@ -59,6 +61,7 @@
 						<td>${lista.material}</td>
 						<td>${lista.quantidade}</td>
 						<td>${lista.quantidadeEmprestimo}</td>
+						<td>${lista.estante}</td>
 					</tr>
 
 				</c:forEach>
